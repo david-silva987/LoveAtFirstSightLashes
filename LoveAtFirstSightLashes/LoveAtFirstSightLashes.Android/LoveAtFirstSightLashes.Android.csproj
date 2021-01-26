@@ -98,7 +98,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionLoveAtFirstSightLashesAndroidHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionLoveAtFirstSightLashesAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadUnhandledDeviceExceptionLoveAtFirstSightLashesAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionLoveAtFirstSightLashesAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

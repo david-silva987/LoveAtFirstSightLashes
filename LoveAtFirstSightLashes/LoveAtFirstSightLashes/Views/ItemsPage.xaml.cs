@@ -103,5 +103,30 @@ namespace LoveAtFirstSightLashes.Views
 
 
         }
+
+        private async void ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+
+            bool answer = await DisplayAlert("Action sur le rendez-vous", "Que souhaitez-vous faire ?", "Annuler", "Valider");
+            var content = e.Item as Meeting;
+
+            if (answer)
+            {
+                bool answer2 = await DisplayAlert("Confirmation d'annulation", "Voulez-vous vraiment supprimer le rendez-vous choisi ?", "Oui", "Non");
+
+                if (answer2)
+                {
+   
+                  //  DependencyService.Get<IMessage>().LongAlert("Transaction supprimée avec succès");
+
+                }
+            }
+            else if (!answer)
+            {
+                
+
+            }
+        }
     }
 }

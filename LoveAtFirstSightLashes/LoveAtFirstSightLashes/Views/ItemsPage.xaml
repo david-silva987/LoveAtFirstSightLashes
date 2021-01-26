@@ -22,7 +22,7 @@
                     Clicked="SearchRDV" />
         </StackLayout>
 
-        <ListView x:Name="listViewAllMeetings" ItemsSource="{Binding Path=Meeting}" SeparatorVisibility="Default" SeparatorColor="Silver" HasUnevenRows="True">
+        <ListView x:Name="listViewAllMeetings" ItemsSource="{Binding Path=Meeting}" SeparatorVisibility="Default" SeparatorColor="Silver" HasUnevenRows="True" ItemTapped="ItemTapped">
 
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -57,7 +57,6 @@
                                 <Label Text="{Binding TypePose}"
                                 HorizontalOptions="Start"
                                 TextColor="#FD6C9E" />
-                                <Button Text="VALIDER" HorizontalOptions="End" Clicked="ValidateRDV_Clicked"></Button>
 
                         </StackLayout>
 

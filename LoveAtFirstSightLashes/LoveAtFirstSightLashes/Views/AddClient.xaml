@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoveAtFirstSightLashes.Views.AddClient"
+             Title="Ajouter nouvelle cliente">
+
+
+
+    <StackLayout Margin="20,35,20,20">
+
+        <Label>Nom Prénom</Label>
+        <Entry x:Name="nameEntry"
+                   Placeholder="Saisissez le nom et prénom:" />
+
+        <Label x:Name="nbRDVLabel">Nombre de rendez-vous:</Label>
+        <Picker  x:Name="rdvPicker" 
+                    Title="Selectionner le nombre de rendez-vous" 
+                    TitleColor="green">
+            <Picker.Items>
+                <x:String>1</x:String>
+                <x:String>2</x:String>
+                <x:String>3</x:String>
+                <x:String>4</x:String>
+                <x:String>5</x:String>
+                <x:String>6</x:String>
+                <x:String>7</x:String>
+                <x:String>8</x:String>
+                <x:String>9</x:String>
+                <x:String>10</x:String>
+            </Picker.Items>
+        </Picker>
+
+
+        <Label>Date de naissance</Label>
+        <DatePicker x:Name="dateEntry"/>
+
+       
+
+        <Button Text="NOUVELLE CLIENTE"
+                    Clicked="AddNewClient_Button" />
+
+    </StackLayout>
+
+
+
+
+</ContentPage>

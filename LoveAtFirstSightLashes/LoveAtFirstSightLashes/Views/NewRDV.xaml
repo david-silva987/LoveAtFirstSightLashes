@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoveAtFirstSightLashes.Views.NewRDV"
+             Title="Ajouter nouveau rendez-vous">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Margin="20,35,20,20">
+
+        <Label>Cliente</Label>
+        <Picker x:Name="listClients" Title="CHoisir une cliente" >
+            <Picker.Items >
+            </Picker.Items>
+        </Picker>
+
+
+        <Label x:Name="nbRDVLabel">Type de pose:</Label>
+        <Picker  x:Name="typePicker" Title="Choisir une pose" >
+            <Picker.Items>
+                <x:String>Pose complète classique CHF 70</x:String>
+                <x:String>Pose complète classique étudiante CHF 60</x:String>
+                <x:String>Retouche Pose complète CHF 50</x:String>
+                <x:String>Retouche Pose complète étudiante CHF 40</x:String>
+                <x:String>Pose Soft Volume CHF 90</x:String>
+                <x:String>Pose Soft Volume étudiante CHF 80</x:String>
+                <x:String>Retouche Soft Volume CHF 60</x:String>
+                <x:String>Retouche Soft Volume étudiante CHF 50</x:String>
+                <x:String>Pose Extra Volume CHF 100</x:String>
+                <x:String>Pose Extra Volume étudiante CHF 90</x:String>
+                <x:String>Retouche Extra Volume CHF 60</x:String>
+                <x:String>Retouche Extra Volume étudiante CHF 50</x:String>
+                <x:String>Pose complète hybride CHF 80 </x:String>
+                <x:String>Pose complète hybride étudiante CHF 70 </x:String>
+                <x:String>Retouche hybride CHF 55</x:String>
+                <x:String>Retouche hybride étudiante CHF 45</x:String>
+                <x:String>Brow Lamination CHF 60</x:String>
+                <x:String>Brow Lamination (4-5 sem) CHF 50</x:String>
+            </Picker.Items>
+        </Picker>
+
+
+        <Label>Jour du rendez-vous </Label>
+        <DatePicker x:Name="dateEntry"/>
+
+        <Label>Heure du rendez-vous</Label>
+        <TimePicker x:Name="TimePicker24">
+            <TimePicker.Format>HH:mm</TimePicker.Format>
+        </TimePicker>
+
+        <Label>Étudiante ?</Label>
+        <Switch x:Name="switchStudent" IsToggled="{Binding isChecked}" OnColor="Orange"
+        ThumbColor="Green" />
+
+
+
+        <Button Text="NOUVEAU RDV"
+                    Clicked="AddNewRDVClicked" />
+
+    </StackLayout>
+
+</ContentPage>

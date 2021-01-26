@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoveAtFirstSightLashes.Views.ItemsPage"
+             Title="Mes prochains rendez-vous"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical">
+
+        <StackLayout Orientation="Horizontal">
+
+            <Label>Choisir un jour</Label>
+            <DatePicker x:Name="dateEntry"/>
+
+            <Button Text="CHERCHER"
+                    Clicked="SearchRDV" />
+        </StackLayout>
+
+        <ListView x:Name="listViewAllMeetings" ItemsSource="{Binding Path=Meeting}" SeparatorVisibility="Default" SeparatorColor="Silver" HasUnevenRows="True">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout
+                        Orientation="Vertical">
+
+
+                        <StackLayout Orientation="Vertical">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DateRDV}"
+                                HorizontalOptions="Start"
+                                TextColor="#FD6C9E" />
+                                <Label Text="à"
+                                HorizontalOptions="Start"
+                                TextColor="#FD6C9E" />
+
+                                <Label Text="{Binding HourRDV}"
+                                HorizontalOptions="Start"
+                                TextColor="#FD6C9E" />
+                               
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding TypePose}"
+                                HorizontalOptions="Start"
+                                TextColor="#FD6C9E" />
+                                <Button Text="VALIDER" HorizontalOptions="End" Clicked="ValidateRDV_Clicked"></Button>
+
+                        </StackLayout>
+
+                   </StackLayout>
+                    
+                </ViewCell>
+
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+
+    </ListView>
+
+        <Label IsVisible="False" x:Name="noRDV">Aucun rendez-vous a été créé pour le moment !</Label>
+    </StackLayout>
+</ContentPage>

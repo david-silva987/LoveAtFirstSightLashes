@@ -44,7 +44,7 @@ namespace LoveAtFirstSightLashes.Data
 
         }
 
-  
+
 
         public async Task<string> GetNameClient(int id)
         {
@@ -61,12 +61,13 @@ namespace LoveAtFirstSightLashes.Data
 
         public async Task<List<Meeting>> GetAllMeetings()
         {
-            return await _database.QueryAsync<Meeting>("Select Client.Prenom,Meeting.Id_Client,  Meeting.DateRDV, Meeting.HourRDV,Meeting.TypePose,Meeting.IsStudent from 'Meeting'  JOIN 'Client' on Meeting.Id_Client = Client.Id");
+            return await _database.QueryAsync<Meeting>("Select * FROM 'Meeting'");
         }
 
         public async Task<List<Meeting>> GetMeetingsForDay(string date)
         {
-            return await _database.QueryAsync<Meeting>("Select Client.Prenom,Meeting.Id_Client,  Meeting.DateRDV, Meeting.HourRDV,Meeting.TypePose,Meeting.IsStudent from 'Meeting'  JOIN 'Client' on Meeting.Id_Client = Client.Id where Meeting.DateRDV = '"+date+"'");
+            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  J where DateRDV = '"+date+"'");
+
         }
 
         public Task<int> UpdateNBRDV(Client client)

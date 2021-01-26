@@ -48,8 +48,13 @@
                             </StackLayout>
                             
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding TypePose}"
+                        <StackLayout Orientation="Vertical">
+
+                                <Label Text="{Binding Name_Client}"
+                                HorizontalOptions="Start"
+                                TextColor="#FD6C9E" />
+                            
+                                <Label Text="{Binding TypePose}"
                                 HorizontalOptions="Start"
                                 TextColor="#FD6C9E" />
                                 <Button Text="VALIDER" HorizontalOptions="End" Clicked="ValidateRDV_Clicked"></Button>

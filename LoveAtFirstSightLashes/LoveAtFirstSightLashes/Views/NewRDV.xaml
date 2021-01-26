@@ -14,7 +14,7 @@
     <StackLayout Margin="20,35,20,20">
 
         <Label>Cliente</Label>
-        <Picker x:Name="listClients" Title="CHoisir une cliente" >
+        <Picker x:Name="listClients" Title="Choisir une cliente" >
             <Picker.Items >
             </Picker.Items>
         </Picker>

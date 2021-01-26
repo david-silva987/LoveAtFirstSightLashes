@@ -83,11 +83,11 @@ namespace LoveAtFirstSightLashes.Views
             Console.WriteLine(dateFormatted);
             listViewAllMeetings.ItemsSource = await App.Database.GetMeetingsForDay(dateFormatted);
             List<Meeting> list = listViewAllMeetings.ItemsSource as List<Meeting>;
-            Console.WriteLine("here");
             foreach (Meeting meeting in list)
             {
-                string name = await App.Database.GetNameClient(meeting.Id_Client);
-                Console.WriteLine(name);
+                Console.WriteLine("here");
+
+                Console.WriteLine(meeting);
             }
 
            if(list.Count==0)

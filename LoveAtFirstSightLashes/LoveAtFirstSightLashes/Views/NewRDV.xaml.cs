@@ -86,16 +86,15 @@ namespace LoveAtFirstSightLashes.Views
 
             string dateFormatted = String.Format(ci,"{0:D}", date);
 
-            await App.Database.SaveNewMeeting(new Meeting
+              await App.Database.SaveNewMeeting(new Meeting
             {
-                Id_Client = id,
-                
+                Name_Client = nameClient,
+
                 DateRDV = dateFormatted,
-                HourRDV = timeChoose.Substring(0,timeChoose.Length-3),
+                HourRDV = timeChoose.Substring(0, timeChoose.Length - 3),
                 TypePose = typePicker.SelectedItem.ToString(),
-                IsStudent = isAStudent,
                 SheCame = false,
-            }) ;
+            });
         }
     }
 }

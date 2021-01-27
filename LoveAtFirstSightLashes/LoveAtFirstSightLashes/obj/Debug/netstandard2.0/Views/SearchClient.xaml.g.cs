@@ -8,37 +8,37 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("LoveAtFirstSightLashes.Views.NewRDV.xaml", "Views/NewRDV.xaml", typeof(global::LoveAtFirstSightLashes.Views.NewRDV))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("LoveAtFirstSightLashes.Views.SearchClient.xaml", "Views/SearchClient.xaml", typeof(global::LoveAtFirstSightLashes.Views.SearchClient))]
 
 namespace LoveAtFirstSightLashes.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\NewRDV.xaml")]
-    public partial class NewRDV : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\SearchClient.xaml")]
+    public partial class SearchClient : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker listClients;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label nbRDVLabel;
+        private global::Xamarin.Forms.StackLayout Details_client;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker typePicker;
+        private global::Xamarin.Forms.Label Name_Client;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.DatePicker dateEntry;
+        private global::Xamarin.Forms.Label Date_Birth;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.TimePicker TimePicker24;
+        private global::Xamarin.Forms.Label NbRDV;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NewRDV));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SearchClient));
             listClients = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "listClients");
-            nbRDVLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "nbRDVLabel");
-            typePicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "typePicker");
-            dateEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "dateEntry");
-            TimePicker24 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.TimePicker>(this, "TimePicker24");
+            Details_client = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "Details_client");
+            Name_Client = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Name_Client");
+            Date_Birth = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Date_Birth");
+            NbRDV = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "NbRDV");
         }
     }
 }

@@ -44,6 +44,13 @@ namespace LoveAtFirstSightLashes.Data
 
         }
 
+        public Task<Client> GetClient(string name)
+        {
+            return  _database.Table<Client>().Where(x => x.Prenom == name).FirstOrDefaultAsync();
+
+
+        }
+
         public async Task<int> GetNbRDV(string name)
         {
             var idClient = await _database.QueryAsync<Client>("SELECT NbRDV FROM 'Client' WHERE Prenom = '" + name + "'");

@@ -35,7 +35,7 @@ namespace LoveAtFirstSightLashes.Views
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        MenuPages.Add(id, new NavigationPage(new SearchClient()));
                         break;
                     case (int)MenuItemType.AddClient:
                         MenuPages.Add(id, new NavigationPage(new AddClient()));

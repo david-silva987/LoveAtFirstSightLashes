@@ -53,10 +53,6 @@
             <TimePicker.Format>HH:mm</TimePicker.Format>
         </TimePicker>
 
-        <Label>Étudiante ?</Label>
-        <Switch x:Name="switchStudent" IsToggled="{Binding isChecked}" OnColor="Orange"
-        ThumbColor="Green" />
-
 
 
         <Button Text="NOUVEAU RDV"

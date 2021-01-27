@@ -42,7 +42,6 @@ namespace LoveAtFirstSightLashes.Views
                 listClients.Items.Add(client.Prenom);
             }
 
-            switchStudent.Toggled += switcher_Toggled;
         }
 
         private void switcher_Toggled(object sender, ToggledEventArgs e)

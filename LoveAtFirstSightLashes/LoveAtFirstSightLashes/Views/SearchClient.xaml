@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoveAtFirstSightLashes.Views.SearchClient"
+             Title="Mes clientes">
+      <StackLayout Orientation="Vertical">
+
+            <StackLayout Orientation="Vertical">
+
+                <Label>Choisir une cliente</Label>
+                <Picker x:Name="listClients" SelectedIndexChanged="listClients_SelectedIndexChanged" Title="Choisir une cliente" >
+                    <Picker.Items >
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+        <StackLayout x:Name="Details_client" Orientation="Vertical">
+
+            <Label HorizontalOptions="Center" FontSize="Large">Coordonnées de la cliente</Label>
+
+            <Label FontSize="Large">Prénom</Label>
+            <Label x:Name="Name_Client"></Label>
+            <Label FontSize="Large">Date de naissance</Label>
+            <Label x:Name="Date_Birth"></Label>
+            <Label FontSize="Large">Nombre de rendez-vous actuels</Label>
+            <Label x:Name="NbRDV"></Label>
+        </StackLayout>
+        </StackLayout>
+</ContentPage>

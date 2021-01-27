@@ -22,6 +22,8 @@ namespace LoveAtFirstSightLashes.Views
     {
         ItemsViewModel viewModel;
 
+        Client client = new Client();
+
  
 
 
@@ -70,10 +72,7 @@ namespace LoveAtFirstSightLashes.Views
         }
 
 
-        async void ValidateRDV_Clicked(object sender, EventArgs e)
-        {
-          
-        }
+ 
         async void SearchRDV(object sender, EventArgs e)
         {
             DateTime date = dateEntry.Date;
@@ -111,6 +110,10 @@ namespace LoveAtFirstSightLashes.Views
             bool answer = await DisplayAlert("Action sur le rendez-vous", "Que souhaitez-vous faire ?", "Annuler", "Valider");
             var content = e.Item as Meeting;
 
+            int nb = await App.Database.GetNbRDV(content.Name_Client);
+
+            Console.WriteLine("Avant confirmation : " + nb);
+
             if (answer)
             {
                 bool answer2 = await DisplayAlert("Confirmation d'annulation", "Voulez-vous vraiment supprimer le rendez-vous choisi ?", "Oui", "Non");
@@ -120,13 +123,7 @@ namespace LoveAtFirstSightLashes.Views
 
 
                     await App.Database.RemoveMeeting(content.Id);
-                    DateTime date = dateEntry.Date;
-                    CultureInfo ci = new CultureInfo("fr-FR");
-
-                    string dateFormatted = String.Format(ci, "{0:D}", date);
-                    listViewAllMeetings.ItemsSource = await App.Database.GetMeetingsForDay(dateFormatted);
-
-                    //  DependencyService.Get<IMessage>().LongAlert("Transaction supprimée avec succès");
+                   // DependencyService.Get<IMessage>().LongAlert("Rendez-vous supprimé avec succès");
 
                 }
             }
@@ -134,7 +131,24 @@ namespace LoveAtFirstSightLashes.Views
             {
                 
 
+                await App.Database.ConfirmMeeting(content.Id);
+                await App.Database.UpdateNBRDV(content.Name_Client);
+               
+                //DependencyService.Get<IMessage>().LongAlert("Rendez-vous confirmé avec succès");
+
+
             }
+
+            DateTime date = dateEntry.Date;
+            CultureInfo ci = new CultureInfo("fr-FR");
+
+            string dateFormatted = String.Format(ci, "{0:D}", date);
+            listViewAllMeetings.ItemsSource = await App.Database.GetMeetingsForDay(dateFormatted);
+            nb = await App.Database.GetNbRDV(content.Name_Client);
+            Console.WriteLine("Après confirmation : " + nb);
+            await DisplayAlert("Attention", content.Name_Client + " est actuellement à " +nb + "rendez-vous ", "OK");
+
+
         }
     }
 }

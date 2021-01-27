@@ -44,7 +44,13 @@ namespace LoveAtFirstSightLashes.Data
 
         }
 
+        public async Task<int> GetNbRDV(string name)
+        {
+            var idClient = await _database.QueryAsync<Client>("SELECT NbRDV FROM 'Client' WHERE Prenom = '" + name + "'");
+            var id = idClient[0];
+            return id.NbRDV;
 
+        }
 
         public async Task<string> GetNameClient(int id)
         {
@@ -61,18 +67,18 @@ namespace LoveAtFirstSightLashes.Data
 
         public async Task<List<Meeting>> GetAllMeetings()
         {
-            return await _database.QueryAsync<Meeting>("Select * FROM 'Meeting'");
+            return await _database.QueryAsync<Meeting>("Select * FROM 'Meeting' where SheCame = false");
         }
 
         public async Task<List<Meeting>> GetMeetingsForDay(string date)
         {
-            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  J where DateRDV = '"+date+"'");
+            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '"+date+"'");
 
         }
 
-        public Task<int> UpdateNBRDV(Client client)
+        public Task<int> UpdateNBRDV(string client_name)
         {
-            return _database.UpdateAsync(client);
+            return _database.ExecuteAsync("UPDATE 'Client' SET NbRDV = NbRDV+1 where Prenom = ?", client_name);
         }
 
 
@@ -82,6 +88,12 @@ namespace LoveAtFirstSightLashes.Data
 
         }
 
+
+        public Task<string> ConfirmMeeting(int id)
+        {
+            return _database.ExecuteScalarAsync<string>("UPDATE 'Meeting' SET SheCame=true WHERE Id =" + id);
+
+        }
 
 
     }

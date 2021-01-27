@@ -76,6 +76,12 @@ namespace LoveAtFirstSightLashes.Data
         }
 
 
+        public Task<string> RemoveMeeting(int id)
+        {
+            return _database.ExecuteScalarAsync<string>("DELETE FROM 'Meeting' WHERE Id =" + id);
+
+        }
+
 
 
     }

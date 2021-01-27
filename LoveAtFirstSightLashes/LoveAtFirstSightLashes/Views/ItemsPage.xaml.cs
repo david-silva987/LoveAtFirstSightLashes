@@ -117,8 +117,16 @@ namespace LoveAtFirstSightLashes.Views
 
                 if (answer2)
                 {
-   
-                  //  DependencyService.Get<IMessage>().LongAlert("Transaction supprimée avec succès");
+
+
+                    await App.Database.RemoveMeeting(content.Id);
+                    DateTime date = dateEntry.Date;
+                    CultureInfo ci = new CultureInfo("fr-FR");
+
+                    string dateFormatted = String.Format(ci, "{0:D}", date);
+                    listViewAllMeetings.ItemsSource = await App.Database.GetMeetingsForDay(dateFormatted);
+
+                    //  DependencyService.Get<IMessage>().LongAlert("Transaction supprimée avec succès");
 
                 }
             }

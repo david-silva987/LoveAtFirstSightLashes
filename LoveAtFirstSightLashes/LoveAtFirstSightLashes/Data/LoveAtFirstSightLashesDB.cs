@@ -139,9 +139,9 @@ namespace LoveAtFirstSightLashes.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<string> RemoveMeeting(int id)
+        public Task<string> RemoveMeeting(string name,string date, string hour)
         {
-            return _database.ExecuteScalarAsync<string>("DELETE FROM 'Meeting' WHERE Id =" + id);
+            return _database.ExecuteScalarAsync<string>("DELETE FROM 'Meeting' WHERE Name_client ='" + name + "' and DateRDV = '" + date + "' and HourRDV ='" + hour + "'");
 
         }
 
@@ -150,9 +150,9 @@ namespace LoveAtFirstSightLashes.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<string> ConfirmMeeting(int id)
+        public Task<string> ConfirmMeeting(string name,string date, string hour)
         {
-            return _database.ExecuteScalarAsync<string>("UPDATE 'Meeting' SET SheCame=true WHERE Id =" + id);
+            return _database.ExecuteScalarAsync<string>("UPDATE 'Meeting' SET SheCame=true WHERE Name_Client ='" + name+"' and DateRDV = '"+ date+"' and HourRDV ='"+ hour+"'");
 
         }
 

@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using LoveAtFirstSightLashes.Models;
 using LoveAtFirstSightLashes.Views;
 using System.Globalization;
+using LoveAtFirstSightLashes.Interfaces;
 
 namespace LoveAtFirstSightLashes.Views
 {
@@ -101,8 +102,8 @@ namespace LoveAtFirstSightLashes.Views
                 {
 
 
-                    await App.Database.RemoveMeeting(content.Id);
-                   // DependencyService.Get<IMessage>().LongAlert("Rendez-vous supprimé avec succès");
+                    await App.Database.RemoveMeeting(content.Name_Client,content.DateRDV,content.HourRDV);
+                    DependencyService.Get<IMessage>().LongAlert("Rendez-vous supprimé avec succès");
 
                 }
             }
@@ -110,10 +111,10 @@ namespace LoveAtFirstSightLashes.Views
             {
                 
 
-                await App.Database.ConfirmMeeting(content.Id);
+                await App.Database.ConfirmMeeting(content.Name_Client, content.DateRDV,content.HourRDV);
                 await App.Database.UpdateNBRDV(content.Name_Client);
                
-                //DependencyService.Get<IMessage>().LongAlert("Rendez-vous confirmé avec succès");
+                DependencyService.Get<IMessage>().LongAlert("Rendez-vous confirmé avec succès");
 
 
             }

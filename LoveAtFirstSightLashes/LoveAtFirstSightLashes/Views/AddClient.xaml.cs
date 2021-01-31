@@ -1,4 +1,5 @@
-﻿using LoveAtFirstSightLashes.Models;
+﻿using LoveAtFirstSightLashes.Interfaces;
+using LoveAtFirstSightLashes.Models;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -17,23 +18,65 @@ namespace LoveAtFirstSightLashes.Views
         }
 
 
+        /// <summary>
+        /// Add a new client if form is valid
+        /// </summary>
         private async void AddNewClient()
         {
 
-            string nbRDVSelected = rdvPicker.SelectedItem.ToString();
-            await App.Database.SaveNewClient(new Client
+            if(IsDateFilled() && IsNameFilled() && IsNbMeetingsFilled())
             {
-                Prenom = nameEntry.Text,
-                DateBirth = dateEntry.Date.ToString(),
-                NbRDV = Convert.ToInt32(nbRDVSelected),
-            });
+                string nbRDVSelected = rdvPicker.SelectedItem.ToString();
+
+                await App.Database.SaveNewClient(new Client
+                {
+                    Prenom = nameEntry.Text,
+                    DateBirth = dateEntry.Date.ToString(),
+                    NbRDV = Convert.ToInt32(nbRDVSelected),
+                });
+                await Navigation.PushAsync(new ItemsPage());
+
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("Veuillez remplir tous les champs du formulaire"); //invalid message
+
+            }
+
         }
-        async void AddNewClient_Button(object sender, EventArgs e)
+        void AddNewClient_Button(object sender, EventArgs e)
         {
             AddNewClient();
-            await Navigation.PushAsync(new ItemsPage());
 
+        }
 
+        private bool IsNameFilled()
+        {
+            return !string.IsNullOrEmpty(nameEntry.Text);
+        }
+
+        private bool IsDateFilled()
+        {
+            if( dateEntry.Date == null)
+            {
+                return false; 
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool IsNbMeetingsFilled()
+        {
+            if( rdvPicker.SelectedIndex ==-1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
     }

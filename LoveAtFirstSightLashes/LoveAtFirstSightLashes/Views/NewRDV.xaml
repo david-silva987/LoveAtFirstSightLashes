@@ -56,7 +56,7 @@
 
 
         <Button Text="NOUVEAU RDV"
-                    Clicked="AddNewRDVClicked" />
+                    Clicked="AddNewMeetingClicked" />
 
     </StackLayout>
 

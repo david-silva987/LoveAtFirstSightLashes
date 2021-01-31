@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using LoveAtFirstSightLashes.Models;
 using System.Globalization;
+using LoveAtFirstSightLashes.Interfaces;
 
 namespace LoveAtFirstSightLashes.Views
 {
@@ -36,7 +37,7 @@ namespace LoveAtFirstSightLashes.Views
             base.OnAppearing();
 
             List<Client> list = await App.Database.GetAllClientsName();
-           foreach(Client client in list)
+            foreach (Client client in list)
             {
                 Console.WriteLine(client.Prenom);
                 listClients.Items.Add(client.Prenom);
@@ -44,56 +45,94 @@ namespace LoveAtFirstSightLashes.Views
 
         }
 
-        private void switcher_Toggled(object sender, ToggledEventArgs e)
-        {
-            if (!e.Value)
-            {
-                isAStudent = false;
-            }
-            else
-            {
-                isAStudent = true;
-            }
-
-            Console.WriteLine(isAStudent);
-        }
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }
-        async void AddNewRDVClicked(object sender, EventArgs e)
+        async void AddNewMeetingClicked(object sender, EventArgs e)
         {
-            AddNewClient();
-            await Navigation.PushAsync(new ItemsPage());
+            AddNewMeeting();
 
 
         }
 
-        private async void AddNewClient()
+        private async void AddNewMeeting()
         {
 
-            string nameClient = listClients.SelectedItem.ToString();
-            Console.WriteLine(nameClient);
-            //bool isToggled = switchStudent.Toggled; //verifier switch is toggled
-            int id = await App.Database.GetIdClient(nameClient);
-            Console.WriteLine(id);
-
-            DateTime date = dateEntry.Date;
-            String timeChoose = TimePicker24.Time.ToString();
-            CultureInfo ci = new CultureInfo("fr-FR");
-
-            string dateFormatted = String.Format(ci,"{0:D}", date);
-
-              await App.Database.SaveNewMeeting(new Meeting
+            if (IsClientChosen() && IsTypeChosen() && IsNotAtMidnight())
             {
-                Name_Client = nameClient,
 
-                DateRDV = dateFormatted,
-                HourRDV = timeChoose.Substring(0, timeChoose.Length - 3),
-                TypePose = typePicker.SelectedItem.ToString(),
-                SheCame = false,
-            });
+
+                string nameClient = listClients.SelectedItem.ToString();
+                Console.WriteLine(nameClient);
+                int id = await App.Database.GetIdClient(nameClient);
+                Console.WriteLine(id);
+
+                DateTime date = dateEntry.Date;
+                String timeChoose = TimePicker24.Time.ToString();
+                CultureInfo ci = new CultureInfo("fr-FR");
+
+                string dateFormatted = String.Format(ci, "{0:D}", date);
+
+                await App.Database.SaveNewMeeting(new Meeting
+                {
+                    Name_Client = nameClient,
+
+                    DateRDV = dateFormatted,
+                    HourRDV = timeChoose.Substring(0, timeChoose.Length - 3),
+                    TypePose = typePicker.SelectedItem.ToString(),
+                    SheCame = false,
+                });
+                await Navigation.PushAsync(new ItemsPage());
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("Veuillez remplir tous les champs du formulaire"); //invalid message
+
+            }
+
+        }
+
+
+
+        private bool IsClientChosen()
+        {
+            if (listClients.SelectedIndex == -1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool IsTypeChosen()
+        {
+            if (typePicker.SelectedIndex == -1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool IsNotAtMidnight()
+        {
+
+            String timeChoose = TimePicker24.Time.ToString();
+
+            if (timeChoose.Substring(0, timeChoose.Length - 3) == "00:00")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

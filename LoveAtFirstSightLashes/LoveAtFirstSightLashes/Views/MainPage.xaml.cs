@@ -22,7 +22,7 @@ namespace LoveAtFirstSightLashes.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.MyMeeting, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -31,10 +31,10 @@ namespace LoveAtFirstSightLashes.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.MyMeeting:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.About:
+                    case (int)MenuItemType.SearchClient:
                         MenuPages.Add(id, new NavigationPage(new SearchClient()));
                         break;
                     case (int)MenuItemType.AddClient:

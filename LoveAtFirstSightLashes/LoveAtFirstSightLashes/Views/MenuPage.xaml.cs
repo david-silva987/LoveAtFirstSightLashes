@@ -20,8 +20,8 @@ namespace LoveAtFirstSightLashes.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Mes rendez-vous" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="Chercher cliente" },
+                new HomeMenuItem {Id = MenuItemType.MyMeeting, Title="Mes rendez-vous" },
+                new HomeMenuItem {Id = MenuItemType.SearchClient, Title="Chercher cliente" },
                 new HomeMenuItem {Id = MenuItemType.AddClient, Title="Ajouter cliente" },
             };
 

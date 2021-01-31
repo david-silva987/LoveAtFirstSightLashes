@@ -25,15 +25,18 @@ namespace LoveAtFirstSightLashes.Views
         {
             base.OnAppearing();
 
-            List<Client> list = await App.Database.GetAllClientsName();
-            foreach (Client client in list)
-            {
-                Console.WriteLine(client.Prenom);
-                listClients.Items.Add(client.Prenom);
 
+            if(listClients.Items.Count == 0)
+            {
+                List<Client> list = await App.Database.GetAllClientsName();
+                foreach (Client client in list)
+                {
+                    Console.WriteLine(client.Prenom);
+                    listClients.Items.Add(client.Prenom);
+
+                }
             }
 
-            
         }
 
         private async void listClients_SelectedIndexChanged(object sender, EventArgs e)

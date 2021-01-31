@@ -13,13 +13,11 @@
     </ContentPage.ToolbarItems>
     <StackLayout Orientation="Vertical">
 
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Vertical">
 
             <Label>Choisir un jour</Label>
-            <DatePicker x:Name="dateEntry"/>
+            <DatePicker x:Name="dateEntry" DateSelected="dateEntry_DateSelected" />
 
-            <Button Text="CHERCHER"
-                    Clicked="SearchRDV" />
         </StackLayout>
 
         <ListView x:Name="listViewAllMeetings" ItemsSource="{Binding Path=Meeting}" SeparatorVisibility="Default" SeparatorColor="Silver" HasUnevenRows="True" ItemTapped="ItemTapped">

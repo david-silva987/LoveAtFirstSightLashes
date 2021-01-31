@@ -25,7 +25,6 @@ D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\bin\
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\LoveAtFirstSightLashes.csprojAssemblyReference.cache
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\AddClient.xaml.g.cs
-D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs

@@ -9,8 +9,6 @@ using Xamarin.Forms.Xaml;
 
 using LoveAtFirstSightLashes.Models;
 using LoveAtFirstSightLashes.Views;
-using LoveAtFirstSightLashes.ViewModels;
-using System.Collections.ObjectModel;
 using System.Globalization;
 
 namespace LoveAtFirstSightLashes.Views
@@ -20,31 +18,17 @@ namespace LoveAtFirstSightLashes.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
 
         Client client = new Client();
-
- 
-
 
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
-
-
-
         }
 
 
-        async void OnItemSelected(object sender, EventArgs args)
-        {
-            var layout = (BindableObject)sender;
-            var item = (Item)layout.BindingContext;
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-        }
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
@@ -56,24 +40,16 @@ namespace LoveAtFirstSightLashes.Views
         protected override async void OnAppearing()
         {
 
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.IsBusy = true;
-
-           
+            base.OnAppearing();           
            
             listViewAllMeetings.ItemsSource = await App.Database.GetAllMeetings();
             foreach(Meeting mee in listViewAllMeetings.ItemsSource)
             { Console.WriteLine(mee.DateRDV); }
-
-
-
         }
 
 
- 
-        async void SearchRDV(object sender, EventArgs e)
+
+        private async void dateEntry_DateSelected(object sender, DateChangedEventArgs e)
         {
             DateTime date = dateEntry.Date;
             CultureInfo ci = new CultureInfo("fr-FR");
@@ -89,7 +65,7 @@ namespace LoveAtFirstSightLashes.Views
                 Console.WriteLine(meeting);
             }
 
-           if(list.Count==0)
+            if (list.Count == 0)
             {
                 noRDV.IsVisible = true;
                 listViewAllMeetings.IsVisible = false;
@@ -99,8 +75,6 @@ namespace LoveAtFirstSightLashes.Views
                 noRDV.IsVisible = false;
                 listViewAllMeetings.IsVisible = true;
             }
-
-
         }
 
         private async void ItemTapped(object sender, ItemTappedEventArgs e)
@@ -150,5 +124,7 @@ namespace LoveAtFirstSightLashes.Views
 
 
         }
+
+      
     }
 }

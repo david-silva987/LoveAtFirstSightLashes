@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +7,8 @@ namespace LoveAtFirstSightLashes.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About,
+        MyMeeting,
+        SearchClient,
         AddClient
     }
     public class HomeMenuItem

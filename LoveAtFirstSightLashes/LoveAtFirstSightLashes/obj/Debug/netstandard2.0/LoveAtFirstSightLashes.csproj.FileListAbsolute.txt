@@ -22,7 +22,6 @@ D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\bin\
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\bin\Debug\netstandard2.0\LoveAtFirstSightLashes.dll
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\bin\Debug\netstandard2.0\ref\LoveAtFirstSightLashes.dll
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\bin\Debug\netstandard2.0\LoveAtFirstSightLashes.pdb
-D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\LoveAtFirstSightLashes.csprojAssemblyReference.cache
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\AddClient.xaml.g.cs
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
@@ -37,3 +36,4 @@ D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\ref\LoveAtFirstSightLashes.dll
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\LoveAtFirstSightLashes.pdb
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\Views\SearchClient.xaml.g.cs
+D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes\obj\Debug\netstandard2.0\LoveAtFirstSightLashes.csprojAssemblyReference.cache

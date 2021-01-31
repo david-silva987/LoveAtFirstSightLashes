@@ -5,8 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="LoveAtFirstSightLashes.Views.ItemsPage"
-             Title="Mes prochains rendez-vous"
-             x:Name="BrowseItemsPage">
+             Title="Mes rendez-vous"
+             x:Name="BrowseItemsPage"
+             NavigationPage.HasBackButton="False">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />

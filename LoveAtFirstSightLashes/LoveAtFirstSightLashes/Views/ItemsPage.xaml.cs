@@ -1,16 +1,10 @@
-﻿using System;
+﻿using LoveAtFirstSightLashes.Interfaces;
+using LoveAtFirstSightLashes.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using LoveAtFirstSightLashes.Models;
-using LoveAtFirstSightLashes.Views;
 using System.Globalization;
-using LoveAtFirstSightLashes.Interfaces;
+using Xamarin.Forms;
 
 namespace LoveAtFirstSightLashes.Views
 {
@@ -50,8 +44,21 @@ namespace LoveAtFirstSightLashes.Views
 
 
             listViewAllMeetings.ItemsSource = await App.Database.GetAllMeetingsForToday(dateFormatted);
-            foreach(Meeting mee in listViewAllMeetings.ItemsSource)
+            foreach (Meeting mee in listViewAllMeetings.ItemsSource)
             { Console.WriteLine(mee.DateRDV); }
+
+            List<Meeting> list = listViewAllMeetings.ItemsSource as List<Meeting>;
+
+            if (list.Count == 0)
+            {
+                noRDV.IsVisible = true;
+                listViewAllMeetings.IsVisible = false;
+            }
+            else
+            {
+                noRDV.IsVisible = false;
+                listViewAllMeetings.IsVisible = true;
+            }
         }
 
 
@@ -102,18 +109,18 @@ namespace LoveAtFirstSightLashes.Views
                 {
 
 
-                    await App.Database.RemoveMeeting(content.Name_Client,content.DateRDV,content.HourRDV);
+                    await App.Database.RemoveMeeting(content.Name_Client, content.DateRDV, content.HourRDV);
                     DependencyService.Get<IMessage>().LongAlert("Rendez-vous supprimé avec succès");
 
                 }
             }
             else if (!answer)
             {
-                
 
-                await App.Database.ConfirmMeeting(content.Name_Client, content.DateRDV,content.HourRDV);
+
+                await App.Database.ConfirmMeeting(content.Name_Client, content.DateRDV, content.HourRDV);
                 await App.Database.UpdateNBRDV(content.Name_Client);
-               
+
                 DependencyService.Get<IMessage>().LongAlert("Rendez-vous confirmé avec succès");
 
 
@@ -124,13 +131,26 @@ namespace LoveAtFirstSightLashes.Views
 
             string dateFormatted = String.Format(ci, "{0:D}", date);
             listViewAllMeetings.ItemsSource = await App.Database.GetMeetingsForDay(dateFormatted);
+
+            List<Meeting> list = listViewAllMeetings.ItemsSource as List<Meeting>;
+
+            if (list.Count == 0)
+            {
+                noRDV.IsVisible = true;
+                listViewAllMeetings.IsVisible = false;
+            }
+            else
+            {
+                noRDV.IsVisible = false;
+                listViewAllMeetings.IsVisible = true;
+            }
             nb = await App.Database.GetNbRDV(content.Name_Client);
             Console.WriteLine("Après confirmation : " + nb);
-            await DisplayAlert("Attention", content.Name_Client + " est actuellement à " +nb + "rendez-vous ", "OK");
+            await DisplayAlert("Attention", content.Name_Client + " est actuellement à " + nb + "rendez-vous ", "OK");
 
 
         }
 
-      
+
     }
 }

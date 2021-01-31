@@ -3,7 +3,6 @@ using LoveAtFirstSightLashes.Models;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace LoveAtFirstSightLashes.Views
 {
@@ -24,7 +23,7 @@ namespace LoveAtFirstSightLashes.Views
         private async void AddNewClient()
         {
 
-            if(IsDateFilled() && IsNameFilled() && IsNbMeetingsFilled())
+            if (IsDateFilled() && IsNameFilled() && IsNbMeetingsFilled())
             {
                 string nbRDVSelected = rdvPicker.SelectedItem.ToString();
 
@@ -57,9 +56,9 @@ namespace LoveAtFirstSightLashes.Views
 
         private bool IsDateFilled()
         {
-            if( dateEntry.Date == null)
+            if (dateEntry.Date == null)
             {
-                return false; 
+                return false;
             }
             else
             {
@@ -69,7 +68,7 @@ namespace LoveAtFirstSightLashes.Views
 
         private bool IsNbMeetingsFilled()
         {
-            if( rdvPicker.SelectedIndex ==-1)
+            if (rdvPicker.SelectedIndex == -1)
             {
                 return false;
             }

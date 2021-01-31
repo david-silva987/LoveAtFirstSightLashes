@@ -1,10 +1,8 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using LoveAtFirstSightLashes.Services;
+﻿using LoveAtFirstSightLashes.Data;
 using LoveAtFirstSightLashes.Views;
-using LoveAtFirstSightLashes.Data;
+using System;
 using System.IO;
+using Xamarin.Forms;
 
 namespace LoveAtFirstSightLashes
 {

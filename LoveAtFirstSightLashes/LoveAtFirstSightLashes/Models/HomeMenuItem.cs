@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LoveAtFirstSightLashes.Models
+﻿namespace LoveAtFirstSightLashes.Models
 {
     public enum MenuItemType
     {

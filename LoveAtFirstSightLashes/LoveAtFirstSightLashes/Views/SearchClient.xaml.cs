@@ -1,9 +1,6 @@
 ﻿using LoveAtFirstSightLashes.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,13 +27,15 @@ namespace LoveAtFirstSightLashes.Views
             List<Client> list = await App.Database.GetAllClientsName();
             listClients.Items.Clear();
             foreach (Client client in list)
-                {
+            {
                 Console.WriteLine("prenom : " + client.Prenom);
-                    listClients.Items.Add(client.Prenom);
-                }
-            
+                listClients.Items.Add(client.Prenom);
+            }
 
-            
+
+
+
+
 
         }
 
@@ -49,8 +48,8 @@ namespace LoveAtFirstSightLashes.Views
             Client client = await App.Database.GetClient(listClients.SelectedItem.ToString());
 
             Name_Client.Text = client.Prenom;
-            
-            Date_Birth.Text = client.DateBirth.Substring(0,client.DateBirth.Length-8);
+
+            Date_Birth.Text = client.DateBirth.Substring(0, client.DateBirth.Length - 8);
             NbRDV.Text = client.NbRDV.ToString();
         }
     }

@@ -1,12 +1,10 @@
-﻿using System;
+﻿using LoveAtFirstSightLashes.Interfaces;
+using LoveAtFirstSightLashes.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using LoveAtFirstSightLashes.Models;
 using System.Globalization;
-using LoveAtFirstSightLashes.Interfaces;
+using Xamarin.Forms;
 
 namespace LoveAtFirstSightLashes.Views
 {

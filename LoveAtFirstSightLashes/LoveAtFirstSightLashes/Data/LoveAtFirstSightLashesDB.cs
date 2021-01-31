@@ -1,8 +1,7 @@
-﻿using System;
+﻿using LoveAtFirstSightLashes.Models;
+using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LoveAtFirstSightLashes.Models;
-using SQLite;
 
 //Database: https://docs.microsoft.com/en-us/xamarin/get-started/tutorials/local-database/?tutorial-step=1&tabs=vswin
 
@@ -61,7 +60,7 @@ namespace LoveAtFirstSightLashes.Data
         /// <returns></returns>
         public Task<Client> GetClient(string name)
         {
-            return  _database.Table<Client>().Where(x => x.Prenom == name).FirstOrDefaultAsync();
+            return _database.Table<Client>().Where(x => x.Prenom == name).FirstOrDefaultAsync();
 
 
         }
@@ -109,7 +108,7 @@ namespace LoveAtFirstSightLashes.Data
         /// <returns></returns>
         public async Task<List<Meeting>> GetMeetingsForDay(string date)
         {
-            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '"+date+"'");
+            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '" + date + "'");
 
         }
 
@@ -139,7 +138,7 @@ namespace LoveAtFirstSightLashes.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<string> RemoveMeeting(string name,string date, string hour)
+        public Task<string> RemoveMeeting(string name, string date, string hour)
         {
             return _database.ExecuteScalarAsync<string>("DELETE FROM 'Meeting' WHERE Name_client ='" + name + "' and DateRDV = '" + date + "' and HourRDV ='" + hour + "'");
 
@@ -150,9 +149,9 @@ namespace LoveAtFirstSightLashes.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<string> ConfirmMeeting(string name,string date, string hour)
+        public Task<string> ConfirmMeeting(string name, string date, string hour)
         {
-            return _database.ExecuteScalarAsync<string>("UPDATE 'Meeting' SET SheCame=true WHERE Name_Client ='" + name+"' and DateRDV = '"+ date+"' and HourRDV ='"+ hour+"'");
+            return _database.ExecuteScalarAsync<string>("UPDATE 'Meeting' SET SheCame=true WHERE Name_Client ='" + name + "' and DateRDV = '" + date + "' and HourRDV ='" + hour + "'");
 
         }
 

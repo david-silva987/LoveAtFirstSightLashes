@@ -606,3 +606,4 @@ D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes.Andr
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes.Android\obj\Debug\100\stamp\_GenerateJavaStubs.stamp
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes.Android\obj\Debug\100\stamp\_GeneratePackageManagerJava.stamp
 D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes.Android\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\DEV\LoveAtFirstSightLashes\LoveAtFirstSightLashes\LoveAtFirstSightLashes.Android\obj\Debug\100\res\drawable\icon.png

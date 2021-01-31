@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-/// <summary>
+﻿/// <summary>
 /// Toasts generation using Xamarin
 /// https://stackoverflow.com/questions/35279403/toast-equivalent-for-xamarin-forms
 /// </summary>

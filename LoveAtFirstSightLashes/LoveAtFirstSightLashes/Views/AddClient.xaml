@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="LoveAtFirstSightLashes.Views.AddClient"
-             Title="Ajouter nouvelle cliente">
+             Title="Ajouter nouvelle cliente"
+             NavigationPage.HasBackButton="False">
 
 
 

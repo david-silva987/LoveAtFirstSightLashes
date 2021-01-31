@@ -83,6 +83,12 @@ namespace LoveAtFirstSightLashes.Data
 
         }
 
+        public async Task<List<Meeting>> GetAllMeetingsForToday(string date)
+        {
+            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '" + date + "'");
+
+        }
+
         public Task<int> UpdateNBRDV(string client_name)
         {
             return _database.ExecuteAsync("UPDATE 'Client' SET NbRDV = NbRDV+1 where Prenom = ?", client_name);

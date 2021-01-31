@@ -20,6 +20,7 @@ namespace LoveAtFirstSightLashes.Views
     {
 
         Client client = new Client();
+        CultureInfo ci = new CultureInfo("fr-FR");
 
 
         public ItemsPage()
@@ -40,9 +41,14 @@ namespace LoveAtFirstSightLashes.Views
         protected override async void OnAppearing()
         {
 
-            base.OnAppearing();           
-           
-            listViewAllMeetings.ItemsSource = await App.Database.GetAllMeetings();
+            base.OnAppearing();
+
+            DateTime today = DateTime.Today;
+
+            string dateFormatted = String.Format(ci, "{0:D}", today);
+
+
+            listViewAllMeetings.ItemsSource = await App.Database.GetAllMeetingsForToday(dateFormatted);
             foreach(Meeting mee in listViewAllMeetings.ItemsSource)
             { Console.WriteLine(mee.DateRDV); }
         }
@@ -52,7 +58,6 @@ namespace LoveAtFirstSightLashes.Views
         private async void dateEntry_DateSelected(object sender, DateChangedEventArgs e)
         {
             DateTime date = dateEntry.Date;
-            CultureInfo ci = new CultureInfo("fr-FR");
 
             string dateFormatted = String.Format(ci, "{0:D}", date);
             Console.WriteLine(dateFormatted);

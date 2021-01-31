@@ -26,16 +26,17 @@ namespace LoveAtFirstSightLashes.Views
             base.OnAppearing();
 
 
-            if(listClients.Items.Count == 0)
-            {
-                List<Client> list = await App.Database.GetAllClientsName();
-                foreach (Client client in list)
-                {
-                    Console.WriteLine(client.Prenom);
-                    listClients.Items.Add(client.Prenom);
 
+            List<Client> list = await App.Database.GetAllClientsName();
+            listClients.Items.Clear();
+            foreach (Client client in list)
+                {
+                Console.WriteLine("prenom : " + client.Prenom);
+                    listClients.Items.Add(client.Prenom);
                 }
-            }
+            
+
+            
 
         }
 

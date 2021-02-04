@@ -13,6 +13,9 @@ namespace LoveAtFirstSightLashes.Views
     [DesignTimeVisible(false)]
     public partial class NewRDV : ContentPage
     {
+
+                protected override bool OnBackButtonPressed() => false; //disable back button on android device
+
         public bool isAStudent;
         public DateTime DateNEW { get; set; }
 
@@ -82,7 +85,9 @@ namespace LoveAtFirstSightLashes.Views
                     TypePose = typePicker.SelectedItem.ToString(),
                     SheCame = false,
                 });
-                await Navigation.PushAsync(new ItemsPage());
+                Console.WriteLine("Navigation.ModalStack  PopModal ===> {0}", App.Current.MainPage.Navigation.ModalStack.Count);
+
+                await Navigation.PopModalAsync();
             }
             else
             {

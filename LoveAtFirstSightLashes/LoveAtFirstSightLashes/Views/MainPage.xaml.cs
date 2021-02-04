@@ -13,6 +13,8 @@ namespace LoveAtFirstSightLashes.Views
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
 
+
+
         public MainPage()
         {
             InitializeComponent();

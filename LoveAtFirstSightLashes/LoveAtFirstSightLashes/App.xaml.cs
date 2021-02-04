@@ -33,6 +33,11 @@ namespace LoveAtFirstSightLashes
             }
         }
 
+        public void ChangeScreen(Page page)
+        {
+            MainPage = page;
+        }
+
 
         protected override void OnStart()
         {

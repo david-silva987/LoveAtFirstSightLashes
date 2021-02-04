@@ -6,8 +6,7 @@
              mc:Ignorable="d"
              x:Class="LoveAtFirstSightLashes.Views.ItemsPage"
              Title="Mes rendez-vous"
-             x:Name="BrowseItemsPage"
-             NavigationPage.HasBackButton="False">
+             x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />

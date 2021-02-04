@@ -108,7 +108,7 @@ namespace LoveAtFirstSightLashes.Data
         /// <returns></returns>
         public async Task<List<Meeting>> GetMeetingsForDay(string date)
         {
-            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '" + date + "'");
+            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '" + date + "' ORDER BY HourRDV ASC");
 
         }
 
@@ -119,7 +119,7 @@ namespace LoveAtFirstSightLashes.Data
         /// <returns></returns>
         public async Task<List<Meeting>> GetAllMeetingsForToday(string date)
         {
-            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '" + date + "'");
+            return await _database.QueryAsync<Meeting>("Select Name_Client,DateRDV,HourRDV,TypePose from 'Meeting'  where SheCame = false and DateRDV = '" + date + "' ORDER BY HourRDV ASC");
 
         }
 

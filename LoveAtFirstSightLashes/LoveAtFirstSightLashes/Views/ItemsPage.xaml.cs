@@ -17,6 +17,7 @@ namespace LoveAtFirstSightLashes.Views
         Client client = new Client();
         CultureInfo ci = new CultureInfo("fr-FR");
 
+        protected override bool OnBackButtonPressed() => false; //disable back button on android device
 
         public ItemsPage()
         {

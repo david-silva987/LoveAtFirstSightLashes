@@ -2,9 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LoveAtFirstSightLashes.Views.SearchClient"
-             Title="Mes clientes"
-             NavigationPage.HasBackButton="False">
-      <StackLayout Orientation="Vertical">
+             Title="Mes clientes">
+    <StackLayout Orientation="Vertical">
 
             <StackLayout Orientation="Vertical">
 

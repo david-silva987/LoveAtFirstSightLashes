@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="LoveAtFirstSightLashes.Views.NewRDV"
-             Title="Nouveau rendez-vous"
-             NavigationPage.HasBackButton="False">
+             Title="Nouveau rendez-vous">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />

@@ -11,6 +11,12 @@ namespace LoveAtFirstSightLashes.Views
     [DesignTimeVisible(false)]
     public partial class AddClient : ContentPage
     {
+
+        protected override bool OnBackButtonPressed() => false; //disable back button on android device
+
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+
+
         public AddClient()
         {
             InitializeComponent();
@@ -33,7 +39,9 @@ namespace LoveAtFirstSightLashes.Views
                     DateBirth = dateEntry.Date.ToString(),
                     NbRDV = Convert.ToInt32(nbRDVSelected),
                 });
-                await Navigation.PushAsync(new ItemsPage());
+                // await Navigation.PushAsync(new ItemsPage());
+                //((App)App.Current).ChangeScreen(new ItemsPage());
+                await RootPage.NavigateFromMenu(0);
 
             }
             else

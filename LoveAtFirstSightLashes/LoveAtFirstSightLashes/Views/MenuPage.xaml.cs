@@ -1,4 +1,5 @@
 ﻿using LoveAtFirstSightLashes.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -32,6 +33,7 @@ namespace LoveAtFirstSightLashes.Views
                     return;
 
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                Console.WriteLine("id is  {0}", id);
                 await RootPage.NavigateFromMenu(id);
             };
         }

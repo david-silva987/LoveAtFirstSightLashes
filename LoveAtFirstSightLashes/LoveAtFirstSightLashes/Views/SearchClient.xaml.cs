@@ -10,6 +10,9 @@ namespace LoveAtFirstSightLashes.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchClient : ContentPage
     {
+
+        protected override bool OnBackButtonPressed() => false; //disable back button on android device
+
         public SearchClient()
         {
             InitializeComponent();

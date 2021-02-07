@@ -23,22 +23,46 @@
         <Label x:Name="nbRDVLabel">Type de pose:</Label>
         <Picker  x:Name="typePicker" Title="Choisir une pose" >
             <Picker.Items>
-                <x:String>Pose complète classique CHF 70</x:String>
-                <x:String>Pose complète classique étudiante CHF 60</x:String>
-                <x:String>Retouche Pose complète CHF 50</x:String>
-                <x:String>Retouche Pose complète étudiante CHF 40</x:String>
-                <x:String>Pose Soft Volume CHF 90</x:String>
-                <x:String>Pose Soft Volume étudiante CHF 80</x:String>
-                <x:String>Retouche Soft Volume CHF 60</x:String>
-                <x:String>Retouche Soft Volume étudiante CHF 50</x:String>
-                <x:String>Pose Extra Volume CHF 100</x:String>
-                <x:String>Pose Extra Volume étudiante CHF 90</x:String>
-                <x:String>Retouche Extra Volume CHF 60</x:String>
-                <x:String>Retouche Extra Volume étudiante CHF 50</x:String>
-                <x:String>Pose complète hybride CHF 80 </x:String>
-                <x:String>Pose complète hybride étudiante CHF 70 </x:String>
-                <x:String>Retouche hybride CHF 55</x:String>
-                <x:String>Retouche hybride étudiante CHF 45</x:String>
+                <x:String>Pose complète classique CHF 80</x:String>
+                <x:String>Retouche classique 2 semaines CHF 35</x:String>
+                <x:String>Retouche classique 3 semaines CHF 50</x:String>
+                <x:String>Retouche classique 4 semaines CHF 60</x:String>
+                <x:String>Pose complète classique étudiante CHF 70</x:String>
+                <x:String>Retouche classique étudiante 2 semaines CHF 25</x:String>
+                <x:String>Retouche classique étudiante 3 semaines CHF 40</x:String>
+                <x:String>Retouche classique étudiante 4 semaines CHF 50</x:String>
+                <x:String>Pose complète Soft Volume CHF 100</x:String>
+                <x:String>Retouche Soft Volume 2 semaines CHF 40</x:String>
+                <x:String>Retouche Soft Volume 3 semaines CHF 60</x:String>
+                <x:String>Retouche Soft Volume 4 semaines CHF 70</x:String>
+                <x:String>Pose complète Soft Volume étudiante CHF 90</x:String>
+                <x:String>Retouche Soft Volume étudiante 2 semaines CHF 30</x:String>
+                <x:String>Retouche Soft Volume étudiante 3 semaines CHF 50</x:String>
+                <x:String>Retouche Soft Volume étudiante 4 semaines CHF 60</x:String>
+                <x:String>Pose complète Extra Volume CHF 110</x:String>
+                <x:String>Retouche Extra Volume 2 semaines CHF 40</x:String>
+                <x:String>Retouche Extra Volume 3 semaines CHF 60</x:String>
+                <x:String>Retouche Extra Volume 4 semaines CHF 70</x:String>
+                <x:String>Pose complète Extra Volume étudiante CHF 100</x:String>
+                <x:String>Retouche Extra Volume étudiante 2 semaines CHF 30</x:String>
+                <x:String>Retouche Extra Volume étudiante 3 semaines CHF 50</x:String>
+                <x:String>Retouche Extra Volume étudiante 4 semaines CHF 60</x:String>
+                <x:String>Pose complète hybrid CHF 90 </x:String>
+                <x:String>Retouche hybrid 2 semaines CHF 40</x:String>
+                <x:String>Retouche hybrid 3 semaines CHF 55</x:String>
+                <x:String>Retouche hybrid 4 semaines CHF 65</x:String>
+                <x:String>Pose complète hybrid étudiante CHF 80</x:String>
+                <x:String>Retouche hybrid étudiante 2 semaines CHF 30</x:String>
+                <x:String>Retouche hybrid étudiante 3 semaines CHF 45</x:String>
+                <x:String>Retouche hybrid étudiante 4 semaines CHF 55</x:String>
+                <x:String>Pose complète KimK CHF 120</x:String>
+                <x:String>Retouche KimK 2 semaines CHF 45</x:String>
+                <x:String>Retouche KimK 3 semaines CHF 65</x:String>
+                <x:String>Retouche KimK 4 semaines CHF 75</x:String>
+                <x:String>Pose complète KimK étudiante CHF 110</x:String>
+                <x:String>Retouche KimK étudiante 2 semaines CHF 35</x:String>
+                <x:String>Retouche KimK étudiante 3 semaines CHF 55</x:String>
+                <x:String>Retouche KimK étudiante 4 semaines CHF 65</x:String>
                 <x:String>Brow Lamination CHF 60</x:String>
                 <x:String>Brow Lamination (4-5 sem) CHF 50</x:String>
             </Picker.Items>

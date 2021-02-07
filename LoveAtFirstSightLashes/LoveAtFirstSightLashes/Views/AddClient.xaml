@@ -13,12 +13,11 @@
 
         <Label>Nom Prénom</Label>
         <Entry x:Name="nameEntry"
-                   Placeholder="Saisissez le nom et prénom:" />
+                   Placeholder="Saisir le nom et prénom" />
 
         <Label x:Name="nbRDVLabel">Nombre de rendez-vous:</Label>
         <Picker  x:Name="rdvPicker" 
-                    Title="Selectionner le nombre de rendez-vous" 
-                    TitleColor="green">
+                    Title="Selectionner le nombre de rendez-vous" >
             <Picker.Items>
                 <x:String>1</x:String>
                 <x:String>2</x:String>
@@ -69,7 +68,7 @@
 
        
 
-        <Button Text="NOUVELLE CLIENTE"
+        <Button Text="AJOUTER"
                     Clicked="AddNewClient_Button" />
 
     </StackLayout>
